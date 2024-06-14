@@ -7,17 +7,23 @@ const service = [
       {
         title: "Sharp Collections",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "sharp-collections" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/sharp-collections",
+        },
       },
       {
         title: "Sharp Inquiries",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "sharpcollections-requests" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/sharpcollections-requests",
+        },
       },
       {
         title: "CPD Services",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "cpd-services" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/cpd-services",
+        },
       },
       {
         title: "Yotta Pay",
@@ -27,17 +33,23 @@ const service = [
           {
             title: "Registration",
             icon: { icon: "tabler-smart-home" },
-            to: { name: "yotta-pay-registrations" },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/yotta-pay/registrations",
+            },
           },
           {
             title: "Payments",
             icon: { icon: "tabler-smart-home" },
-            to: { name: "yotta-pay-payments" },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/yotta-pay/payments",
+            },
           },
           {
             title: "Stats",
             icon: { icon: "tabler-smart-home" },
-            to: { name: "yotta-pay-stats" },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/yotta-pay/stats",
+            },
           },
         ],
       },
@@ -49,12 +61,19 @@ const service = [
           {
             title: "Applications",
             icon: { icon: "tabler-smart-home" },
-            to: { name: "card-reader-applications" },
+            to: {
+              path:
+                process?.env?.VUE_API_BASE_URL + "/card-reader-applications",
+            },
           },
           {
             title: "Companies",
             icon: { icon: "tabler-smart-home" },
-            to: { name: "card-reader-applications-companies" },
+            to: {
+              path:
+                process?.env?.VUE_API_BASE_URL +
+                "/card-reader-applications/companies",
+            },
           },
         ],
       },
@@ -66,7 +85,11 @@ const service = [
           {
             title: "Purchased Packages",
             icon: { icon: "tabler-smart-home" },
-            to: { name: "accountancy-purchased-packages" },
+            to: {
+              path:
+                process?.env?.VUE_API_BASE_URL +
+                "/accountancy/purchased-packages",
+            },
           },
         ],
       },
@@ -78,29 +101,46 @@ const service = [
           {
             title: "Admin Overview Stats",
             icon: { icon: "tabler-smart-home" },
-            to: { name: "plump-marketing-overview-stats" },
+            to: {
+              path:
+                process?.env?.VUE_API_BASE_URL +
+                "/plump-marketing/overview-stats",
+            },
           },
           {
             title: "User Activity",
             icon: { icon: "tabler-smart-home" },
-            to: { name: "plump-marketing-user-activity" },
+            to: {
+              path:
+                process?.env?.VUE_API_BASE_URL +
+                "/plump-marketing/user-activity",
+            },
           },
           {
             title: "User",
             icon: { icon: "tabler-smart-home" },
-            to: { name: "plump-marketing-users-financial-matrix" },
+            to: {
+              path:
+                process?.env?.VUE_API_BASE_URL +
+                "/plump-marketing/users-financial-matrix",
+            },
           },
         ],
       },
       {
         title: "Social media",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "social-media-requests" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/social-media-requests",
+        },
       },
       {
         title: "Holly Complications Partnership",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "holly-complications-partnership" },
+        to: {
+          path:
+            process?.env?.VUE_API_BASE_URL + "/holly-complications-partnership",
+        },
       },
     ],
   },

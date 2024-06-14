@@ -1,33 +1,45 @@
+import company from "../../assets/icon/svg/company.svg";
+import insurancesss from "../../assets/icon/svg/insurance.svg";
+import insuranceinquiry from "../../assets/icon/svg/insuranceinquiry.svg";
+
 const insurance = [
   {
     to: null,
     title: "Insurance",
-    icon: { icon: "tabler-smart-home" },
+    icon: { icon: insurancesss },
     children: [
       {
-        to: { name: "insurances" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/insurances",
+        },
         title: "Companies",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: company },
       },
       {
-        to: { name: "insurances-reorder" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/insurances/reorder",
+        },
         title: "Re-Order Companies",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: company },
       },
       {
-        to: { name: "insurances-requests" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/insurances-requests",
+        },
         title: "Insurance Inquiries",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: insuranceinquiry },
       },
       {
-        to: { name: "insync-insurances-requests" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/insync-insurances-requests",
+        },
         title: "Insync Insurance Inquiries",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: insuranceinquiry },
       },
       {
         to: null,
         title: "Faces Insurance",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: company },
       },
       {
         to: null,

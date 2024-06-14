@@ -7,27 +7,37 @@ const clinicTreatmetnts = [
       {
         title: "Clinics",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "clinics" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/clinics",
+        },
       },
       {
         title: "SEO Treatments",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "treatments-list" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/treatments-list",
+        },
       },
       {
         title: "Clinic Booking Requests",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "clinic-booking-requests" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/clinic-booking-requests",
+        },
       },
       {
         title: "Clinic Reviews",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "clinic-reviews" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/clinic-reviews",
+        },
       },
       {
         title: "Deleted Clinics",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "clinics-deleted-list" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/clinics/deleted-list",
+        },
       },
     ],
   },

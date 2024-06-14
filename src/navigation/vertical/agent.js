@@ -7,12 +7,17 @@ const agent = [
       {
         icon: { icon: "tabler-smart-home" },
         title: "Agent",
-        to: { name: "staff-members-list" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/staff-members/list",
+        },
       },
       {
         icon: { icon: "tabler-smart-home" },
         title: "Overview",
-        to: { name: "staff-order-commission-overview" },
+        to: {
+          path:
+            process?.env?.VUE_API_BASE_URL + "/staff-order-commission/overview",
+        },
       },
     ],
   },

@@ -7,12 +7,16 @@ const shopAffiliate = [
       {
         title: "Payouts",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "affiliations-payouts" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/affiliations/payouts",
+        },
       },
       {
         title: "Orders",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "affiliations-orders" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/affiliations/orders",
+        },
       },
     ],
   },

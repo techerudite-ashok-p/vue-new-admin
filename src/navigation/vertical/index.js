@@ -1,3 +1,7 @@
+import banner from "../../assets/icon/svg/banner.svg";
+import marketingcampaigns from "../../assets/icon/svg/marketingcampaigns.svg";
+import shopandfparmacy from "../../assets/icon/svg/shopandfparmacy.svg";
+import termandcondition from "../../assets/icon/svg/termandcondition.svg";
 import agent from "./agent";
 import booking from "./booking";
 import clinicTreatmetnts from "./clinics -treatments";
@@ -32,8 +36,8 @@ export default [
   ...booking,
   {
     title: "Marketing Campaigns",
-    to: { name: "marketing-campaigns" },
-    icon: { icon: "tabler-file" },
+    to: { path: process?.env?.VUE_API_BASE_URL + "/marketing-campaigns" },
+    icon: { icon: marketingcampaigns },
   },
   ...consentForms,
   ...walletManagement,
@@ -41,17 +45,23 @@ export default [
   {
     title: "Faces Pharmacy",
     to: null,
-    icon: { icon: "tabler-file" },
+    icon: { icon: shopandfparmacy },
     children: [
       {
         title: "Faces Pharmacy Banners",
-        to: { name: "faces-pharmacy-banners" },
-        icon: { icon: "tabler-file" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/faces-pharmacy-banners",
+        },
+        icon: { icon: banner },
       },
       {
         title: "Terms And Conditions",
-        to: { name: "faces-pharmacy-termsandconditions" },
-        icon: { icon: "tabler-file" },
+        to: {
+          path:
+            process?.env?.VUE_API_BASE_URL +
+            "/faces-pharmacy-termsandconditions",
+        },
+        icon: { icon: termandcondition },
       },
     ],
   },
@@ -70,14 +80,18 @@ export default [
     children: [
       {
         title: "SEO Set up",
-        to: { name: "seo-dev-pages" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/seo-dev-pages",
+        },
         icon: { icon: "tabler-file" },
       },
     ],
   },
   {
     title: "Email Builder",
-    to: { name: "email-builder-view" },
+    to: {
+      path: process?.env?.VUE_API_BASE_URL + "/email-builder-view",
+    },
     icon: { icon: "tabler-file" },
   },
   ...websiteBuilder,
@@ -94,13 +108,18 @@ export default [
       {
         title: "Purchased Packages",
         icon: { icon: "tabler-smart-home" },
-        to: { name: "accountancy-purchased-packages" },
+        to: {
+          path:
+            process?.env?.VUE_API_BASE_URL + "/accountancy/purchased-packages",
+        },
       },
     ],
   },
   {
     title: "Flagged Users",
-    to: { name: "flagged-users" },
+    to: {
+      path: process?.env?.VUE_API_BASE_URL + "/flagged-users",
+    },
     icon: { icon: "tabler-file" },
   },
   {

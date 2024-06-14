@@ -7,7 +7,9 @@ const settings = [
       {
         icon: { icon: "tabler-smart-home" },
         title: "CMS",
-        to: { name: "cmspages" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/cmspages",
+        },
       },
       {
         icon: { icon: "tabler-smart-home" },
@@ -17,44 +19,60 @@ const settings = [
           {
             icon: { icon: "tabler-smart-home" },
             title: "CMS Pages",
-            to: { name: "kanvaspages" },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/kanvaspages",
+            },
           },
         ],
       },
       {
         icon: { icon: "tabler-smart-home" },
         title: "Marketing Consent Forms",
-        to: { name: "marketingconsentforms" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/marketingconsentforms",
+        },
       },
       {
         icon: { icon: "tabler-smart-home" },
         title: "Marketing Aftercare",
-        to: { name: "marketingaftercare" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/marketingaftercare",
+        },
       },
       {
         icon: { icon: "tabler-smart-home" },
         title: "User Guide",
-        to: { name: "user-guide" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/user-guide",
+        },
       },
       {
         icon: { icon: "tabler-smart-home" },
         title: "Reports",
-        to: { name: "faces-reports" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/faces-reports  ",
+        },
       },
       {
         icon: { icon: "tabler-smart-home" },
         title: "Support Team",
-        to: { name: "support-team" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/support-team",
+        },
       },
       {
         icon: { icon: "tabler-smart-home" },
         title: "Seller Support Members",
-        to: { name: "seller-support-members" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/seller-support-members",
+        },
       },
       {
         icon: { icon: "tabler-smart-home" },
         title: "Support Category",
-        to: { name: "support-categories-list" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/support-categories/list",
+        },
       },
       {
         icon: { icon: "tabler-smart-home" },
@@ -64,19 +82,25 @@ const settings = [
           {
             icon: { icon: "tabler-smart-home" },
             title: "Messages",
-            to: { name: "promotional-message" },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/promotional-message",
+            },
           },
           {
             icon: { icon: "tabler-smart-home" },
             title: "Emails",
-            to: { name: "promotional-email" },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/promotional-email",
+            },
           },
         ],
       },
       {
         icon: { icon: "tabler-smart-home" },
         title: "FAQ",
-        to: { name: "faq-category" },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/faq-category",
+        },
       },
     ],
   },

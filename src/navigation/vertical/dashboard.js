@@ -1,16 +1,19 @@
+import dashboardicon from "../../assets/icon/svg/dashboardicon.svg";
+import stats from "../../assets/icon/svg/stats.svg";
+
 const dashboard = [
   {
     title: "Dashboard",
-    icon: { icon: "tabler-layout-dashboard-filled" },
+    icon: { icon: dashboardicon },
     to: null,
     children: [
       {
-        icon: { icon: "tabler-layout-dashboard-filled" },
+        icon: { icon: dashboardicon },
         title: "Dashboard",
         to: { path: process?.env?.VUE_API_BASE_URL + "/dashboard" },
       },
       {
-        icon: { icon: "tabler-chart-pie-filled" },
+        icon: { icon: stats },
         title: "Stats",
         to: { path: process?.env?.VUE_API_BASE_URL + "/dashboard/stats" },
       },
@@ -19,7 +22,3 @@ const dashboard = [
 ];
 
 export default dashboard;
-console.log(
-  "path: process?.env?.VUE_API_BASE_URL",
-  process?.env?.VUE_API_BASE_URL
-);

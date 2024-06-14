@@ -1,128 +1,178 @@
+import banner from "../../assets/icon/svg/banner.svg";
+import cardpayemnt from "../../assets/icon/svg/cardpayemnt.svg";
+import cart from "../../assets/icon/svg/cart.svg";
+import dashboardicon from "../../assets/icon/svg/dashboardicon.svg";
+import discount from "../../assets/icon/svg/discount.svg";
+import pharmancyregister from "../../assets/icon/svg/pharmancyregister.svg";
+import prescriberfees from "../../assets/icon/svg/prescriberfees.svg";
+import prescriberreview from "../../assets/icon/svg/prescriberreview.svg";
+import prescribers from "../../assets/icon/svg/prescribers.svg";
+import product from "../../assets/icon/svg/product.svg";
+import productreview from "../../assets/icon/svg/productreview.svg";
+import publicoder from "../../assets/icon/svg/publicoder.svg";
+import shopandfparmacy from "../../assets/icon/svg/shopandfparmacy.svg";
+import sociallink from "../../assets/icon/svg/sociallink.svg";
+import vendor from "../../assets/icon/svg/vandor.svg";
+
 const shopPharmacy = [
   {
     title: "Shop & Pharmacy",
-    icon: { icon: "tabler-smart-home" },
+    icon: { icon: shopandfparmacy },
     to: null,
     children: [
       {
         title: "Vendors",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: cart },
         to: null,
         children: [
           {
             title: "Vendors",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "vendors" },
+            icon: { icon: vendor },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/vendors",
+            },
           },
           {
             title: "Vendor Discount Codes",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "vendors-discount-codes" },
+            icon: { icon: discount },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/vendors/discount-codes",
+            },
           },
           {
             title: "Pharmacy commissions",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "vendors-zing-commissions" },
+            icon: { icon: discount },
+            to: {
+              path:
+                process?.env?.VUE_API_BASE_URL + "/vendors/zing-commissions",
+            },
           },
         ],
       },
       {
         title: "Order",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: vendor },
         to: null,
         children: [
           {
             title: "Shop Orders",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "orders" },
+            icon: { icon: discount },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/orders",
+            },
           },
           {
             title: "Public Orders",
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: publicoder },
             to: null,
           },
           {
             title: "Shop Affiliation",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "vendors-zing-commissions" },
+            icon: { icon: discount },
+            to: {
+              path:
+                process?.env?.VUE_API_BASE_URL + "/vendors/zing-commissions",
+            },
           },
         ],
       },
       {
         title: "Categories",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: vendor },
         to: null,
         children: [
           {
             title: "Categories",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "categories" },
+            icon: { icon: dashboardicon },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/categories",
+            },
           },
           {
             title: "Products",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "products" },
+            icon: { icon: product },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/products",
+            },
           },
           {
             title: "Product Reviews",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "products-review" },
+            icon: { icon: productreview },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/products/review",
+            },
           },
         ],
       },
       {
         title: "Pharmacy Orders",
-        to: { name: "prescription-orders" },
-        icon: { icon: "tabler-file" },
+        icon: { icon: publicoder },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/prescription-orders",
+        },
       },
       {
         title: "Pharmacy Registrations",
-        to: { name: "prescribers-requests" },
-        icon: { icon: "tabler-file" },
+        icon: { icon: pharmancyregister },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/prescribers-requests",
+        },
       },
       {
         title: "Prescribers",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: prescribers },
         to: null,
         children: [
           {
             title: "Prescriber Leaderboard",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "prescriber-leader-board" },
+            icon: { icon: cardpayemnt },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/prescriber-leader-board",
+            },
           },
           {
             title: "Prescription Fees",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "prescription-fees" },
+            icon: { icon: prescriberfees },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/prescription-fees",
+            },
           },
           {
             title: "Prescriber Reviews",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "prescriber-reviews" },
+            icon: { icon: prescriberreview },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/prescriber-reviews",
+            },
           },
         ],
       },
       {
         title: "Shop Settings",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: cart },
         to: null,
         children: [
           {
             title: "Banners",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "shopbanners" },
+            icon: { icon: banner },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/shopbanners",
+            },
           },
           {
             title: "Social Links",
-            icon: { icon: "tabler-smart-home" },
-            to: { name: "sociallinks" },
+            icon: { icon: sociallink },
+            to: {
+              path: process?.env?.VUE_API_BASE_URL + "/sociallinks",
+            },
           },
         ],
       },
       {
         title: "Pharma Leaderboard",
-        icon: { icon: "tabler-smart-home" },
-        to: { name: "vendors-pharma-leaderboard" },
+        icon: { icon: discount },
+        to: {
+          path: process?.env?.VUE_API_BASE_URL + "/vendors/pharma-leaderboard",
+        },
       },
     ],
   },
