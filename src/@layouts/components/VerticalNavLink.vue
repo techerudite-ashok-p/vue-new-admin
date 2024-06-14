@@ -1,12 +1,12 @@
 <script setup>
-import { layoutConfig } from '@layouts'
-import { can } from '@layouts/plugins/casl'
-import { useLayoutConfigStore } from '@layouts/stores/config'
+import { layoutConfig } from '@layouts';
+import { can } from '@layouts/plugins/casl';
+import { useLayoutConfigStore } from '@layouts/stores/config';
 import {
   getComputedNavLinkToProp,
   getDynamicI18nProps,
   isNavLinkActive,
-} from '@layouts/utils'
+} from '@layouts/utils';
 
 const props = defineProps({
   item: {
@@ -17,6 +17,13 @@ const props = defineProps({
 
 const configStore = useLayoutConfigStore()
 const hideTitleAndBadge = configStore.isVerticalNavMini()
+
+const handleClick =(event, item)=> {
+  if (item.to && item.to.path && item.to.path.includes("staging")) {
+    event.preventDefault()
+    window.location.href = item.to.path
+  }
+}
 </script>
 
 <template>
@@ -26,9 +33,11 @@ const hideTitleAndBadge = configStore.isVerticalNavMini()
     :class="{ disabled: item.disable }"
   >
     <Component
-      :is="item.to ? 'RouterLink' : 'a'"
+      :is="item.to ? (item.to.path && item.to.path.includes('staging') ? 'a' : 'RouterLink') : 'a'"
       v-bind="getComputedNavLinkToProp(item)"
       :class="{ 'router-link-active router-link-exact-active': isNavLinkActive(item, $router) }"
+      @click="handleClick($event, item)"
+
     >
       <Component
         :is="layoutConfig.app.iconRenderer || 'div'"

@@ -1,111 +1,146 @@
 const users = [
   {
     title: "Users",
-    icon: { icon: "tabler-smart-home" },
+    icon: { icon: "tabler-users" },
     to: null,
     children: [
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: "tabler-users" },
         title: "All User",
-        to: { name: "users" },
+        to: { path: process.env.VUE_API_BASE_URL + "/users" },
       },
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: "tabler-users-group" },
         title: "Groups",
-        to: { name: "users-groups" },
+        to: { path: process.env.VUE_API_BASE_URL + "/users/groups" },
       },
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: "tabler-building-hospital" },
         title: "Clinics",
         to: null,
         children: [
           {
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: "tabler-building-hospital" },
             title: "Clinics",
-            to: { name: "clinics" },
+            to: { path: process.env.VUE_API_BASE_URL + "/clinics" },
           },
           {
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: "tabler-building-hospital" },
             title: "Booking-Profile",
-            to: { name: "clinics-booking-profiles" },
+            to: {
+              path: process.env.VUE_API_BASE_URL + "/clinics/booking-profiles",
+            },
           },
           {
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: "tabler-building-hospital" },
             title: "Clinic-Reviews",
-            to: { name: "clinic-reviews" },
+            to: { path: process.env.VUE_API_BASE_URL + "/clinic-reviews" },
           },
           {
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: "tabler-building-hospital" },
             title: "SEO Treatments",
-            to: { name: "treatments-list" },
+            to: { path: process.env.VUE_API_BASE_URL + "/treatments-list" },
           },
           {
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: "tabler-building-hospital" },
             title: "Clinic Booking Requests",
-            to: { name: "clinic-booking-requests" },
+            to: {
+              path: process.env.VUE_API_BASE_URL + "/clinic-booking-requests",
+            },
           },
           {
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: "tabler-users-group" },
             title: "Completed Profiles",
-            to: { name: "completed-profiles" },
+            to: {
+              path: process.env.VUE_API_BASE_URL + "/completed-profiles",
+            },
           },
         ],
       },
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: "tabler-calendar-user" },
         title: "Calendar Users",
-        to: { name: "users-calender" },
+        to: {
+          path: process.env.VUE_API_BASE_URL + "/users/calender",
+        },
       },
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: "tabler-calendar-user" },
         title: "Bookings",
-        to: { name: "users-bookings-list" },
+        to: {
+          path: process.env.VUE_API_BASE_URL + "/users/bookings-list",
+        },
       },
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: "tabler-bell-ringing-filled" },
         title: "Notifications",
-        to: { name: "users-notification" },
+        to: {
+          path: process.env.VUE_API_BASE_URL + "/users/notification",
+        },
       },
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: "tabler-users-group" },
         title: "Users Added Consent Without Clinic",
-        to: { name: "users-consent-form-without-clinic-user-list" },
+        to: {
+          path:
+            process.env.VUE_API_BASE_URL +
+            "/users/consent-form-without-clinic-user-list",
+        },
       },
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: "tabler-users-group" },
         title: "Users Added Consent Without Treatment",
-        to: { name: "users-consent-form-without-treatment-user-list" },
+        to: {
+          path:
+            process.env.VUE_API_BASE_URL +
+            "/users/consent-form-without-treatment-user-list",
+        },
       },
 
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: "tabler-users-group" },
         title: "Users Hair Prescription List",
-        to: { name: "users-hair-prescription-list" },
+        to: {
+          path: process.env.VUE_API_BASE_URL + "/users/hair-prescription-list",
+        },
       },
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: "tabler-users-group" },
         title: "Hair Prescription Enrolled Users",
-        to: { name: "users-hair-prescription-enrolled-users" },
+        to: {
+          path:
+            process.env.VUE_API_BASE_URL +
+            "/users/hair-prescription-enrolled-users",
+        },
       },
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: "tabler-building-hospital" },
         title: "Report",
         to: null,
         children: [
           {
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: "tabler-building-hospital" },
             title: "Booking And Consent Forms",
-            to: { name: "report-booking-and-consent-forms" },
+            to: {
+              path:
+                process.env.VUE_API_BASE_URL +
+                "/report/booking-and-consent-forms",
+            },
           },
           {
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: "tabler-building-hospital" },
             title: "Clinic and treatments",
-            to: { name: "report-clinic-and-treatments" },
+            to: {
+              path:
+                process.env.VUE_API_BASE_URL + "/report/clinic-and-treatments",
+            },
           },
           {
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: "tabler-building-hospital" },
             title: "Shop",
-            to: { name: "report-shop" },
+            to: {
+              path: process.env.VUE_API_BASE_URL + "/report/shop",
+            },
           },
         ],
       },

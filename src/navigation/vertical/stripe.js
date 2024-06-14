@@ -1,23 +1,27 @@
 const stripe = [
   {
     title: "Stripe",
-    icon: { icon: "tabler-smart-home" },
+    icon: { icon: "tabler-swipe" },
     to: null,
     children: [
       {
         title: "Stripe Onboarding",
-        icon: { icon: "tabler-smart-home" },
-        to: { name: "stripe-management" },
+        icon: { icon: "tabler-users-group" },
+        to: { path: process?.env?.VUE_API_BASE_URL + "/stripe/management" },
       },
       {
         title: "Charge-back Management",
-        icon: { icon: "tabler-smart-home" },
-        to: { name: "stripe-charge-back" },
+        icon: { icon: "tabler-credit-card" },
+        to: { path: process?.env?.VUE_API_BASE_URL + "/stripe/charge-back" },
       },
       {
         title: "Stripe Onboarding",
-        icon: { icon: "tabler-smart-home" },
-        to: { name: "stripe-active-instant-payouts-users" },
+        icon: { icon: "tabler-credit-card" },
+        to: {
+          path:
+            process?.env?.VUE_API_BASE_URL +
+            "/stripe/active-instant-payouts-users",
+        },
       },
     ],
   },
