@@ -1,7 +1,12 @@
 import banner from "../../assets/icon/svg/banner.svg";
+import collection from "../../assets/icon/svg/collection.svg";
+import insuranceicon from "../../assets/icon/svg/insurance.svg";
+import logout from "../../assets/icon/svg/logout.svg";
 import marketingcampaigns from "../../assets/icon/svg/marketingcampaigns.svg";
 import shopandfparmacy from "../../assets/icon/svg/shopandfparmacy.svg";
+import socialmedia from "../../assets/icon/svg/socialmessage.svg";
 import termandcondition from "../../assets/icon/svg/termandcondition.svg";
+import usericon from "../../assets/icon/svg/usericon.svg";
 import agent from "./agent";
 import booking from "./booking";
 import clinicTreatmetnts from "./clinics -treatments";
@@ -76,14 +81,14 @@ export default [
   {
     title: "SEO Set up",
     to: null,
-    icon: { icon: "tabler-file" },
+    icon: { icon: insuranceicon },
     children: [
       {
         title: "SEO Set up",
         to: {
           path: process?.env?.VUE_API_BASE_URL + "/seo-dev-pages",
         },
-        icon: { icon: "tabler-file" },
+        icon: { icon: socialmedia },
       },
     ],
   },
@@ -102,12 +107,12 @@ export default [
   },
   {
     title: "Accountancy",
-    icon: { icon: "tabler-smart-home" },
+    icon: { icon: usericon },
     to: null,
     children: [
       {
         title: "Purchased Packages",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: collection },
         to: {
           path:
             process?.env?.VUE_API_BASE_URL + "/accountancy/purchased-packages",
@@ -125,6 +130,6 @@ export default [
   {
     title: "Logout",
     to: { name: "login" },
-    icon: { icon: "tabler-file" },
+    icon: { icon: logout },
   },
 ];

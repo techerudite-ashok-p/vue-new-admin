@@ -1,19 +1,23 @@
+import oders from "../../assets/icon/svg/oders.svg";
+import payout from "../../assets/icon/svg/payout.svg";
+import walletamagement from "../../assets/icon/svg/walletamagement.svg";
+
 const shopAffiliate = [
   {
     title: "Shop Affiliate",
-    icon: { icon: "tabler-smart-home" },
+    icon: { icon: walletamagement },
     to: null,
     children: [
       {
         title: "Payouts",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: payout },
         to: {
           path: process?.env?.VUE_API_BASE_URL + "/affiliations/payouts",
         },
       },
       {
         title: "Orders",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: oders },
         to: {
           path: process?.env?.VUE_API_BASE_URL + "/affiliations/orders",
         },

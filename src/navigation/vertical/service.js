@@ -1,52 +1,60 @@
+import collection from "../../assets/icon/svg/collection.svg";
+import insurance from "../../assets/icon/svg/insurance.svg";
+import registation from "../../assets/icon/svg/registation.svg";
+import sharpinquiry from "../../assets/icon/svg/sharpinquiry.svg";
+import socialmessage from "../../assets/icon/svg/socialmessage.svg";
+import swipmachine from "../../assets/icon/svg/swipmachine.svg";
+import usericon from "../../assets/icon/svg/usericon.svg";
+
 const service = [
   {
     title: "Services",
-    icon: { icon: "tabler-smart-home" },
+    icon: { icon: insurance },
     to: null,
     children: [
       {
         title: "Sharp Collections",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: collection },
         to: {
           path: process?.env?.VUE_API_BASE_URL + "/sharp-collections",
         },
       },
       {
         title: "Sharp Inquiries",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: sharpinquiry },
         to: {
           path: process?.env?.VUE_API_BASE_URL + "/sharpcollections-requests",
         },
       },
       {
         title: "CPD Services",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: collection },
         to: {
           path: process?.env?.VUE_API_BASE_URL + "/cpd-services",
         },
       },
       {
         title: "Yotta Pay",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: swipmachine },
         to: null,
         children: [
           {
             title: "Registration",
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: registation },
             to: {
               path: process?.env?.VUE_API_BASE_URL + "/yotta-pay/registrations",
             },
           },
           {
             title: "Payments",
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: collection },
             to: {
               path: process?.env?.VUE_API_BASE_URL + "/yotta-pay/payments",
             },
           },
           {
             title: "Stats",
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: collection },
             to: {
               path: process?.env?.VUE_API_BASE_URL + "/yotta-pay/stats",
             },
@@ -55,12 +63,12 @@ const service = [
       },
       {
         title: "Card Machine",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: swipmachine },
         to: null,
         children: [
           {
             title: "Applications",
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: registation },
             to: {
               path:
                 process?.env?.VUE_API_BASE_URL + "/card-reader-applications",
@@ -68,7 +76,7 @@ const service = [
           },
           {
             title: "Companies",
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: collection },
             to: {
               path:
                 process?.env?.VUE_API_BASE_URL +
@@ -79,12 +87,12 @@ const service = [
       },
       {
         title: "Accountancy",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: usericon },
         to: null,
         children: [
           {
             title: "Purchased Packages",
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: collection },
             to: {
               path:
                 process?.env?.VUE_API_BASE_URL +
@@ -95,12 +103,12 @@ const service = [
       },
       {
         title: "Plump Marketing Stats",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: swipmachine },
         to: null,
         children: [
           {
             title: "Admin Overview Stats",
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: registation },
             to: {
               path:
                 process?.env?.VUE_API_BASE_URL +
@@ -109,7 +117,7 @@ const service = [
           },
           {
             title: "User Activity",
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: collection },
             to: {
               path:
                 process?.env?.VUE_API_BASE_URL +
@@ -118,7 +126,7 @@ const service = [
           },
           {
             title: "User",
-            icon: { icon: "tabler-smart-home" },
+            icon: { icon: collection },
             to: {
               path:
                 process?.env?.VUE_API_BASE_URL +
@@ -129,14 +137,14 @@ const service = [
       },
       {
         title: "Social media",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: socialmessage },
         to: {
           path: process?.env?.VUE_API_BASE_URL + "/social-media-requests",
         },
       },
       {
         title: "Holly Complications Partnership",
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: socialmessage },
         to: {
           path:
             process?.env?.VUE_API_BASE_URL + "/holly-complications-partnership",

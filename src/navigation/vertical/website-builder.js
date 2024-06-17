@@ -1,11 +1,14 @@
+import collection from "../../assets/icon/svg/collection.svg";
+import usericon from "../../assets/icon/svg/usericon.svg";
+
 const websiteBuilder = [
   {
-    icon: { icon: "tabler-smart-home" },
+    icon: { icon: usericon },
     title: "Website Builder",
     to: null,
     children: [
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: collection },
         title: "Users Activity",
         to: {
           path:
@@ -13,7 +16,7 @@ const websiteBuilder = [
         },
       },
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: collection },
         title: "Occupation Usage",
         to: {
           path:
@@ -22,7 +25,7 @@ const websiteBuilder = [
         },
       },
       {
-        icon: { icon: "tabler-smart-home" },
+        icon: { icon: collection },
         title: "Custom Build Requests",
         to: {
           path: process?.env?.VUE_API_BASE_URL + "/personal-website-user-list",
