@@ -1,3 +1,11 @@
+<script setup>
+import { useGetClinicList } from "../components/pinia/getClinicList";
+
+const clinicsStore = useGetClinicList();
+console.log("clinicsStorefgdfgdfg",clinicsStore.$state)
+</script>
+
+
 <template>
   <div>
     <VCard title="Create Awesome 🙌">

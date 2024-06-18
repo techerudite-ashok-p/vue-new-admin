@@ -10,7 +10,7 @@ const dashboard = [
       {
         icon: { icon: dashboardicon },
         title: "Dashboard",
-        to: { path: process?.env?.VUE_API_BASE_URL + "/dashboard" },
+        to: { name: "dashboard" },
       },
       {
         icon: { icon: stats },

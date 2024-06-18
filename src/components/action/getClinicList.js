@@ -1,0 +1,1 @@
+export const GET_CLINIC_LIST_DATA = "GET_CLINIC_LIST_DATA";
