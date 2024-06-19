@@ -13,25 +13,25 @@ export const useGetClinicList = defineStore("getClinicList", {
     ...initialState,
   }),
   actions: {
-    setClinicList: (action) => {
+    setClinicList(action) {
       console.log("actionactionaction", action);
       switch (action?.type) {
         case GET_CLINIC_LIST_DATA: {
           console.log(
             "GET_CLINIC_LIST_DATAGET_CLINIC_LIST_DATAGET_CLINIC_LIST_DATA",
             action.payload,
-            initialState // Access state through context
+            this // Access state through `this` in Pinia
           );
-          return {
-            ...initialState, // Spread existing state
-            hasMore: action?.payload?.hasMore,
-            clinicList: initialState?.clinicList.concat(action?.payload?.items),
-            total: action?.payload?.total,
-            page: initialState?.page + 1,
-          };
+          // Mutate state directly
+          this.hasMore = action?.payload?.hasMore;
+          this.clinicList = this.clinicList.concat(action?.payload?.items);
+          this.total = action?.payload?.total;
+          this.page = this.page + 1;
+          break;
         }
+
         default:
-          return context.state; // Always return state object
+          return this; // Always return state object
       }
     },
   },

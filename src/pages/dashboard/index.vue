@@ -3,16 +3,16 @@ import { GetClinicListAction } from "../../components/graphql/query/getClinicLis
 import { useGetClinicList } from "../../components/pinia/getClinicList";
 
 const clinicsStore = useGetClinicList();
-console.log("clinicsStore",clinicsStore.$state)
+console.log("clinicsStoreclinicsStoreclinicsStore",clinicsStore?.page)
 const { initGetClinicList } =
   GetClinicListAction();
 const fetchClinics = () => {
   console.log(
-    "initGetClinicListinitGetClinicListinitGetClinicListinitGetClinicList"
+    "initGetClinicListinitGetClinicListinitGetClinicListinitGetClinicList",clinicsStore?.page
   );
   let page = 0
   initGetClinicList({
-    page: ++page,
+    page:(clinicsStore.page+1),
     limit: 10,
     search: "",
     isFeatured: false,

@@ -2,7 +2,7 @@
 import { useGetClinicList } from "../components/pinia/getClinicList";
 
 const clinicsStore = useGetClinicList();
-console.log("clinicsStorefgdfgdfg",clinicsStore.$state)
+console.log("clinicsStorefgdfgdfg",clinicsStore.$state,clinicsStore?.page)
 </script>
 
 

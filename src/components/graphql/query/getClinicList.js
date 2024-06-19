@@ -1,4 +1,4 @@
-import { useLazyQuery } from "@vue/apollo-composable";
+import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 import { useGetClinicList } from "../../pinia/getClinicList";
 
@@ -49,27 +49,30 @@ export const GetClinicListAction = () => {
   );
   const clinictstore = useGetClinicList();
 
-  const { load, result, refetch } = useLazyQuery(GET_CLINIC_LIST, {
+  const { result, fetchMore } = useQuery(GET_CLINIC_LIST, {
     fetchPolicy: "network-only",
     nextFetchPolicy: "network-only",
   });
+  console.log("resultresult", result);
 
-  const initGetClinicList = async (variables) => {
-    try {
-      const { getClinicList } = await load(null, variables); // Call load with variables directly
-      console.log("kfjghdfkhgjkdfhgh", getClinicList?.success);
-      if (getClinicList?.success) {
-        console.log("Clinic List Response:", getClinicList.data);
-        clinictstore.setClinicList({
-          type: "GET_CLINIC_LIST_DATA",
-          payload: getClinicList?.data,
-        });
-        // Further processing with data if needed
-      }
-    } catch (error) {
-      console?.log("Error fetching clinic list:", error);
-    }
+  const initGetClinicList = (variables) => {
+    fetchMore({ variables: variables })
+      .then((result) => {
+        console.log("resultresultresult", result?.data?.getClinicList?.data);
+        if (result?.data?.getClinicList?.success) {
+          console.log(
+            "Clinic List Response:",
+            result?.data?.getClinicList?.success
+          );
+          clinictstore.setClinicList({
+            type: "GET_CLINIC_LIST_DATA",
+            payload: result?.data?.getClinicList?.data,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log("errerrerrerrerr", err);
+      });
   };
-
   return { initGetClinicList };
 };
