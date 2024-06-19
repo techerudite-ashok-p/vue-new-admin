@@ -1,4 +1,5 @@
 <script setup>
+import { UserRegisterAction } from "../../components/graphql/mutation/userRegister";
 import { GetClinicListAction } from "../../components/graphql/query/getClinicList";
 import { useGetClinicList } from "../../components/pinia/getClinicList";
 
@@ -6,17 +7,26 @@ const clinicsStore = useGetClinicList();
 console.log("clinicsStoreclinicsStoreclinicsStore",clinicsStore?.page)
 const { initGetClinicList } =
   GetClinicListAction();
+
+const {initUserRegister,loading, error, data} =UserRegisterAction()  
 const fetchClinics = () => {
   console.log(
     "initGetClinicListinitGetClinicListinitGetClinicListinitGetClinicList",clinicsStore?.page
   );
-  let page = 0
-  initGetClinicList({
+   initGetClinicList({
     page:(clinicsStore.page+1),
     limit: 10,
     search: "",
     isFeatured: false,
   });
+  initUserRegister({
+  email: "pas285@yopmail.com",
+  password: "Test@12345",
+  fname: "Test",
+  lname: "Test",
+  number: "123465487990",
+  confirmPassword: "Test@12345"
+})
 };
 </script>
 

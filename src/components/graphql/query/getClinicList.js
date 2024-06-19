@@ -2,7 +2,7 @@ import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 import { useGetClinicList } from "../../pinia/getClinicList";
 
-export const GET_CLINIC_LIST = gql`
+export const GET_CLINIC_LIST_QUERY = gql`
   query GetClinicList(
     $page: Int
     $limit: Int
@@ -49,21 +49,20 @@ export const GetClinicListAction = () => {
   );
   const clinictstore = useGetClinicList();
 
-  const { result, fetchMore } = useQuery(GET_CLINIC_LIST, {
-    fetchPolicy: "network-only",
-    nextFetchPolicy: "network-only",
-  });
+  const { result, fetchMore, loading, error } = useQuery(
+    GET_CLINIC_LIST_QUERY,
+    {
+      fetchPolicy: "network-only",
+      nextFetchPolicy: "network-only",
+    }
+  );
   console.log("resultresult", result);
 
   const initGetClinicList = (variables) => {
-    fetchMore({ variables: variables })
+    fetchMore(variables)
       .then((result) => {
         console.log("resultresultresult", result?.data?.getClinicList?.data);
         if (result?.data?.getClinicList?.success) {
-          console.log(
-            "Clinic List Response:",
-            result?.data?.getClinicList?.success
-          );
           clinictstore.setClinicList({
             type: "GET_CLINIC_LIST_DATA",
             payload: result?.data?.getClinicList?.data,
@@ -74,5 +73,5 @@ export const GetClinicListAction = () => {
         console.log("errerrerrerrerr", err);
       });
   };
-  return { initGetClinicList };
+  return { initGetClinicList, result, loading, error };
 };

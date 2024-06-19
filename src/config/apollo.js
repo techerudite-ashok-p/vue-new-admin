@@ -6,8 +6,9 @@ import {
 } from "@apollo/client/core";
 import { provideApolloClient } from "@vue/apollo-composable";
 
+console.log("BASE_GRAPHQL_API_URL", process.env.BASE_GRAPHQL_API_URL);
 const httpLink = new HttpLink({
-  uri: "https://dev.facesconsent.com:3126/graphql",
+  uri: process.env.BASE_GRAPHQL_API_URL,
 });
 
 const authMiddleware = new ApolloLink((operation, forward) => {
