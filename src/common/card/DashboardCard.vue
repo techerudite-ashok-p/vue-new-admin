@@ -1,13 +1,14 @@
 <script setup>
-import { VBtn } from "vuetify/lib/components/VBtn/index.mjs"
- 
+import { VBtn } from "vuetify/lib/components/VBtn/index.mjs";
+
 const props = defineProps({
   icon: String,
   color: String,
   title: String,
   value: Number,
   isHover: Boolean,
-})
+  onConsole: Function,
+});
 </script>
 
 <template>
@@ -36,7 +37,9 @@ const props = defineProps({
         </div>
         <VDivider />
         <div class="d-flex gap-x-2 align-center">
-          <VBtn size="40" variant="plain"> View </VBtn>
+          <VBtn size="40" variant="plain" v-on:click="onConsole(title)">
+            View
+          </VBtn>
         </div>
       </VCardText>
     </VCard>
