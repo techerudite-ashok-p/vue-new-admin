@@ -181,17 +181,31 @@ const DashboardData = [
     isHover: false,
     icon: "tabler-credit-card",
   },
-]
-
+];
+const onConsole = (param) => {
+  console.log("good morning ",param);
+};
 console.log("DashboardDataDashboardData", DashboardData);
 </script>
 
 <template>
   <div>
     <VRow class="match-height">
-      <VCol cols="12" md="3" sm="6" v-for="(item, index) in DashboardData" :key="index">
-        <DashboardCard :icon="item.icon" :color="item.color" :title="item.title" :value="item.value"
-          :isHover="item.isHover" />
+      <VCol
+        cols="12"
+        md="3"
+        sm="6"
+        v-for="(item, index) in DashboardData"
+        :key="index"
+      >
+        <DashboardCard
+          :icon="item.icon"
+          :color="item.color"
+          :title="item.title"
+          :value="item.value"
+          :isHover="item.isHover"
+          :onConsole="onConsole"
+        />
       </VCol>
     </VRow>
 

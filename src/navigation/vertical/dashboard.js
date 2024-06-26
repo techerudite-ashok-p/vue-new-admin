@@ -15,10 +15,10 @@ const dashboard = [
       {
         icon: { icon: stats },
         title: "Stats",
-        to: { path: process?.env?.VUE_API_BASE_URL + "/dashboard/stats" },
+        to: { name: "dashboard-stats" },
       },
     ],
   },
-];
+]
 
 export default dashboard;
