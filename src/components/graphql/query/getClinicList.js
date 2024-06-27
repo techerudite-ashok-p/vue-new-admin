@@ -1,6 +1,7 @@
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 import { useGetClinicList } from "../../pinia/getClinicList";
+import {GET_CLINIC_LIST_DATA} from "../../constants/getClinicList"
 
 export const GET_CLINIC_LIST_QUERY = gql`
   query GetClinicList(

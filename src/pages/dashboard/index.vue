@@ -9,6 +9,7 @@ const { initGetClinicList } = GetClinicListAction();
 
 const { initUserRegister, loading, error, data } = UserRegisterAction();
 const fetchClinics = () => {
+  console.log("clinicsStore", clinicsStore.page);
   initGetClinicList({
     page: clinicsStore.page + 1,
     limit: 10,
@@ -183,7 +184,7 @@ const DashboardData = [
   },
 ];
 const onConsole = (param) => {
-  console.log("good morning ",param);
+  console.log("good morning ", param);
 };
 console.log("DashboardDataDashboardData", DashboardData);
 </script>

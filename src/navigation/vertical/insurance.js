@@ -46,6 +46,13 @@ const insurance = [
         title: "Faces Verified",
         icon: { icon: "tabler-smart-home" },
       },
+      {
+        to: {
+          name: "insurances-expiry",
+        },
+        title: "Expiry",
+        icon: { icon: company },
+      },
     ],
   },
 ];

@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { GET_CLINIC_LIST_DATA } from "../action/getClinicList";
+import { GET_CLINIC_LIST_DATA } from "../constants/getClinicList";
 
 let initialState = {
   clinicList: [],
@@ -17,11 +17,6 @@ export const useGetClinicList = defineStore("getClinicList", {
       console.log("actionactionaction", action);
       switch (action?.type) {
         case GET_CLINIC_LIST_DATA: {
-          console.log(
-            "GET_CLINIC_LIST_DATAGET_CLINIC_LIST_DATAGET_CLINIC_LIST_DATA",
-            action.payload,
-            this // Access state through `this` in Pinia
-          );
           // Mutate state directly
           this.hasMore = action?.payload?.hasMore;
           this.clinicList = this.clinicList.concat(action?.payload?.items);
