@@ -140,6 +140,12 @@ onUpdated(() => {
 
 <template>
   <div>
+    <VCard class="mb-6">
+      <VCardText>
+        <h1>Insurances Expiry</h1>
+      </VCardText>
+    </VCard>
+
     <VCard title="Filters" class="mb-6">
       <VCardText>
         <VRow>
