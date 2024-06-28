@@ -9,6 +9,7 @@ export const useAdminDashboardData = defineStore("adminDashBoardData", {
     adminDataList: [],
     totalPage: 0,
     totalCount: 0,
+    curPage: 0,
   }),
   actions: {
     setAdminDashboardData(action) {
@@ -16,22 +17,24 @@ export const useAdminDashboardData = defineStore("adminDashBoardData", {
       switch (action?.type) {
         case ADMIN_DASHBOARD_DATA: {
           console.log("actionactionactionaction", action);
-          this.adminDataList = this?.adminDataList?.concat(
-            action?.payload?.admin_Data
-          );
+          this.adminDataList = action?.payload?.admin_Data;
           this.totalPage = action?.payload?.totalPage;
           this.totalCount = action?.payload?.totalCount;
-          console.log("thisthisthisthis", this.adminDataList, this.state);
+          this.curPage = this.curPage == 0 ? 1 : this.curPage + 1;
+          console.log(
+            "thisthisthisthis",
+            this.adminDataList,
+            this.curPage,
+            this
+          );
           break;
         }
-        // case ADMIN_DASHBOARD_DATA_CLEAR:
-        //   {
-        //     this.adminDataList = [];
-        //     this.totalPage = null;
-        //     this.totalCount = null;
-        //     break;
-        //   }
-        //   console.log("ADMIN_DASHBOARD_DATA_CLEAR", this, this.$state);
+        case ADMIN_DASHBOARD_DATA_CLEAR: {
+          this.adminDataList = [];
+          this.totalPage = null;
+          this.totalCount = null;
+          break;
+        }
 
         default:
           return this;

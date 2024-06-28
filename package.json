@@ -37,6 +37,7 @@
     "apollo-link-http": "^1.5.17",
     "chart.js": "4.4.2",
     "cookie-es": "1.0.0",
+    "dayjs": "^1.11.11",
     "dotenv": "^16.4.5",
     "eslint-plugin-regexp": "2.2.0",
     "graphql": "^16.8.2",
