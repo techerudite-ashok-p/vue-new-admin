@@ -55,6 +55,10 @@ export const AdminDashBoardDataAction = () => {
       dateRangeFilter: {
         filterType: "",
       },
+    },
+    {
+      fetchPolicy: "network-only",
+      nextFetchPolicy: "network-only",
     }
   );
 

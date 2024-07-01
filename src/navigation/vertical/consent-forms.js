@@ -82,7 +82,7 @@ const consentForms = [
         title: "Consent Form Used Count",
         icon: { icon: productracking },
         to: {
-          path: process.env.VUE_API_BASE_URL + "/forms-products/consent-used",
+          name: "forms-products-consent-used",
         },
       },
       {
