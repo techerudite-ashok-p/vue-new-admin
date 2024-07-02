@@ -120,22 +120,14 @@ const onExportData = () => {
 watch(
   [selectMonthRange, dateRangefilter, searchQuery, itemsPerPage, page],
   () => {
-    console.log(" dateRangefilter?.value", dateRangefilter?.value);
-    adminDashboardDataStore.setAdminDashboardData({
-      type: "ADMIN_DASHBOARD_DATA_CLEAR",
-    });
+    // console.log(" dateRangefilter?.value", dateRangefilter?.value);
+    // adminDashboardDataStore.setAdminDashboardData({
+    //   type: "ADMIN_DASHBOARD_DATA_CLEAR",
+    // });
     fetchData();
   },
   { immediate: true }
 );
-
-onUpdated(() => {
-  console.log(
-    "dateRangefilter525252",
-    dateRangefilter?.value,
-    dateRangefilter.value.split(" to ")
-  );
-});
 </script>
 
 <template>
