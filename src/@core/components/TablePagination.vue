@@ -31,9 +31,6 @@ const updatePage = (value) => {
       <p class="text-disabled mb-0">
         {{ paginationMeta({ page, itemsPerPage }, totalItems) }}
       </p>
-      {{
-        console.log("itemsPerPageitemsPerPage", page, itemsPerPage, totalItems)
-      }}
       <VPagination
         :model-value="page"
         active-color="primary"

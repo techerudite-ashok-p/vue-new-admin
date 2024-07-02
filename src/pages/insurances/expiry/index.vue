@@ -71,13 +71,10 @@ const page = ref(1);
 const isCsvRequire = ref(false);
 
 //*****************USE IN FUNCTION *****************//
-const fetchData = () => {
-  console.log(
-    "dateRangefilterdateRangefilterdateRangefilter",
-    itemsPerPage.value,
-    isCsvRequire.value,
-    dateRangefilter.value
-  );
+const fetchData = (event) => {
+  event?.preventDefault();
+  event?.stopPropagation();
+
   initAdminDashboardData(
     {
       page: page?.value,
@@ -101,11 +98,13 @@ const fetchData = () => {
       },
     },
     async (result) => {
-      const response = await fetch(result.downloadUrl);
-      const csvText = await response.text();
-      const encodedCsv = encodeURIComponent(csvText);
-      const dataUrl = `data:text/csv;charset=utf-8,${encodedCsv}`;
-      const newTab = window.open(dataUrl, "_blank");
+      if (result?.downloadUrl !== null) {
+        const response = await fetch(result.downloadUrl);
+        const csvText = await response.text();
+        const encodedCsv = encodeURIComponent(csvText);
+        const dataUrl = `data:text/csv;charset=utf-8,${encodedCsv}`;
+        const newTab = window.open(dataUrl, "_blank");
+      }
     }
   );
   isCsvRequire.value = false;
@@ -120,7 +119,6 @@ const onExportData = () => {
 watch(
   [selectMonthRange, dateRangefilter, searchQuery, itemsPerPage, page],
   () => {
-    // console.log(" dateRangefilter?.value", dateRangefilter?.value);
     // adminDashboardDataStore.setAdminDashboardData({
     //   type: "ADMIN_DASHBOARD_DATA_CLEAR",
     // });
@@ -194,13 +192,6 @@ watch(
       <VDivider class="mt-4" />
 
       <!-- 👉 Datatable  -->
-      {{
-        console.log(
-          "itemsPerPage",
-          itemsPerPage,
-          adminDashboardDataStore?.adminDataList
-        )
-      }}
       <VDataTableServer
         v-model:items-per-page="itemsPerPage"
         v-model:page="page"
@@ -211,32 +202,27 @@ watch(
       >
         <!-- category -->
         <template #item.userName="{ item }">
-          {{ console.log("itemitemitemitemitemitem", item) }}
           <span class="text-body-1 text-high-emphasis">{{
             `${item.usr_fname} ${item.usr_lname}`
           }}</span>
         </template>
         <template #item.userEmail="{ item }">
-          {{ console.log("itemitemitemitemitemitem2525252", item) }}
           <span class="text-body-1 text-high-emphasis">{{
             item.usr_email
           }}</span>
         </template>
         <template #item.userPhoneNo="{ item }">
-          {{ console.log("itemitemitemitemitemitem", item) }}
           <span class="text-body-1 text-high-emphasis">{{
             item.usr_phone_no
           }}</span>
         </template>
         <template #item.expiryDate="{ item }">
-          {{ console.log("itemitemitemitemitemitem", item) }}
           <span class="text-body-1 text-high-emphasis">{{
             dayjs(item.uid_expire).format("DD-MM-YYYY")
           }}</span>
         </template>
 
         <template #item.pendingDays="{ item }">
-          {{ console.log("itemitemitemitemitemitem", item) }}
           <span class="text-body-1 text-high-emphasis">{{
             item.pendingDays
           }}</span>

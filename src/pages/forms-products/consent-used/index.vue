@@ -1,8 +1,7 @@
 <script setup>
-import { onUpdated, watch } from "vue";
+import { watch } from "vue";
 import { DefaultConstantFromDataAction } from "@/components/graphql/query/defaultConstantFromData";
 import { useDefaultConstantFromData } from "@/components/pinia/defaultConstantFromData";
-import { DEFAULT_CONSTANT_FROM_DATA_CLEAN } from "@/components/constants/defaultConstantFromData";
 
 //*****************PINIA ADMIN DASHBOARD DATA STORE *****************//
 // Initialize store
@@ -23,6 +22,7 @@ const headers = [
   {
     title: "Used Count",
     key: "usedCount",
+    sortBy: ["", "asc", "desc"],
   },
 ];
 
@@ -35,7 +35,6 @@ const orderBy = ref("");
 
 //*****************USE IN FUNCTION *****************//
 const fetchData = () => {
-  console.log("orderBy.value", orderBy.value);
   initDefaultConstantFromData({
     page: page.value,
     limit: itemsPerPage.value,
@@ -57,16 +56,17 @@ const fetchData = () => {
 };
 
 const updateOptions = () => {
-  console.log("orderByorderByorderBy", typeof orderBy.value);
-  if (orderBy.value == "asc") {
-    orderBy.value == "desc";
-  } else if (orderBy.value == "desc") {
-    orderBy.value = "";
-  } else {
-    orderBy.value = "";
-  }
+  console.log("orderBy.value", orderBy.value);
+  orderBy.value == ""
+    ? (orderBy.value = "asc")
+    : orderBy.value == "asc"
+    ? (orderBy.value = "desc")
+    : orderBy.value == "desc"
+    ? (orderBy.value = "")
+    : (orderBy.value = "asc");
 };
 
+//*****************VUE HOOK USED *****************//
 watch(
   [dateRangefilter, searchQuery, itemsPerPage, page, orderBy],
   () => {
@@ -77,14 +77,6 @@ watch(
   },
   { immediate: true }
 );
-
-//*****************VUE HOOK USED *****************//
-onUpdated(() => {
-  console.log(
-    "defaultConstantFromDataStore",
-    defaultConstantFromDataStore.defaultConsentFromDataList
-  );
-});
 </script>
 
 <template>
@@ -130,16 +122,14 @@ onUpdated(() => {
         :items-length="defaultConstantFromDataStore?.totalCount"
         :headers="headers"
         class="text-no-wrap"
-        @update:options="updateOptions"
+        @update:sortBy="updateOptions"
       >
         <template #item.defaultConsentFormName="{ item }">
-          {{ console.log("itemitemitemitemitemitem", item) }}
           <span class="text-body-1 text-high-emphasis">{{
             item.constantFromName || ""
           }}</span>
         </template>
         <template #item.usedCount="{ item }">
-          {{ console.log("itemitemitemitemitemitem", item) }}
           <span class="text-body-1 text-high-emphasis">{{
             item?.constantFromCount || ""
           }}</span>

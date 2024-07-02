@@ -14,7 +14,6 @@ export const useDefaultConstantFromData = defineStore(
     }),
     actions: {
       setDefaultConstantFromData(action) {
-        console.log("DEFAULT_CONSTANT_FROM_DATA", action);
         switch (action.type) {
           case DEFAULT_CONSTANT_FROM_DATA: {
             this.defaultConsentFromDataList = action?.payload?.admin_Data;

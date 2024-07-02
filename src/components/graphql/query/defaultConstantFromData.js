@@ -53,22 +53,17 @@ export const DefaultConstantFromDataAction = () => {
   );
 
   onResult((resonse) => {
-    console.log("resonseresonseresonse", resonse);
     store.setDefaultConstantFromData({
       type: DEFAULT_CONSTANT_FROM_DATA,
       payload: resonse,
     });
     if (resonse?.data?.defaultConstantFromData?.success) {
-      console.log(
-        "defaultConstantFromData",
-        resonse?.data?.defaultConstantFromData?.data
-      );
       store.setDefaultConstantFromData({
         type: DEFAULT_CONSTANT_FROM_DATA,
         payload: resonse?.data?.defaultConstantFromData?.data,
       });
     } else {
-      console.error(
+      console.log(
         "Query error:",
         resonse?.data?.defaultConstantFromData.message
       );
@@ -76,7 +71,7 @@ export const DefaultConstantFromDataAction = () => {
   });
 
   onError((err) => {
-    console.error("Query error:", err);
+    console.log("Query error:", err);
   });
 
   const initDefaultConstantFromData = (variables) => {

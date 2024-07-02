@@ -63,7 +63,6 @@ export const AdminDashBoardDataAction = () => {
   );
 
   onResult((result) => {
-    console.log("resultresultresultresultresult", result);
     if (result?.data?.adminDashBoardData?.success) {
       adminDataListStore.setAdminDashboardData({
         type: ADMIN_DASHBOARD_DATA,
@@ -81,11 +80,6 @@ export const AdminDashBoardDataAction = () => {
   const initAdminDashboardData = (variables, successCallback) => {
     refetch(variables)
       .then((resonse) => {
-        console.log(
-          "resultresult",
-          resonse,
-          resonse.data.adminDashBoardData.success
-        );
         if (resonse?.data?.adminDashBoardData?.success) {
           successCallback(resonse?.data?.adminDashBoardData?.data);
         }

@@ -1,7 +1,7 @@
 import { useQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
 import { useGetClinicList } from "../../pinia/getClinicList";
-import {GET_CLINIC_LIST_DATA} from "../../constants/getClinicList"
+import { GET_CLINIC_LIST_DATA } from "../../constants/getClinicList";
 
 export const GET_CLINIC_LIST_QUERY = gql`
   query GetClinicList(
@@ -57,12 +57,10 @@ export const GetClinicListAction = () => {
       nextFetchPolicy: "network-only",
     }
   );
-  console.log("resultresult", result);
 
   const initGetClinicList = (variables) => {
     fetchMore(variables)
       .then((result) => {
-        console.log("resultresultresult", result?.data?.getClinicList?.data);
         if (result?.data?.getClinicList?.success) {
           clinictstore.setClinicList({
             type: "GET_CLINIC_LIST_DATA",
